@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,3 +12,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('', 'ProductController@get');
+Route::post('', 'ProductController@store');
+Route::put('', 'ProductController@update');
+Route::delete('', 'ProductController@delete');
+
+Route::get('/categories', 'ProductController@getCategories');
+Route::post('/categories', 'ProductController@storeCategory');
