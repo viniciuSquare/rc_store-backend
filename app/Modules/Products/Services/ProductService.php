@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProductService extends BaseService
 {
 
-    protected $model;
+    protected Product $model;
 
     public function __construct()
     {
@@ -22,13 +22,15 @@ class ProductService extends BaseService
         try {
             DB::beginTransaction();
                 $model = $this->model->create($data);
-
-                if($data['current_stock']) {
+                info($model);
+                if($data['stock']) {
                     $movementService = new MovementService();
                     $movementService->store([
-                        'product_id' => $model->id,
-                        
-                    ])
+                        'product_id'           => $model->id,
+                        'quantity'             => $model->stock,
+                        'price'                => $model->sale_price,
+                        'movement_category_id' => 1,
+                    ]);
                 }
             DB::commit();
         } catch (\Throwable $th) {
@@ -36,8 +38,7 @@ class ProductService extends BaseService
             throw $th;
         }
 
-
-        // return $model;
+        return $model;
     }
 
 }

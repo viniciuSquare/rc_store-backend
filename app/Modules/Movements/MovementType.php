@@ -14,6 +14,6 @@ class MovementType extends Model
 
     public function movements()
     {
-        return $this->belongsTo(Movement::class, 'movements_category_id');
+        return $this->belongsTo(Movement::class, 'movement_category_id');
     }
 }

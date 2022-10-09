@@ -11,4 +11,9 @@ class MovementService extends BaseService
     {
         $this->setModel(new Movement());
     }
+
+    public function getIncomes()
+    {
+        return Movement::where('operator', 1);
+    }
 }
