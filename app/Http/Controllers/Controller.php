@@ -21,23 +21,27 @@ class Controller extends BaseController
         $this->service = $service;
     }
 
-    public function get()
+    public function get(Request $request)
     {
+        $productId = isset($request->query()['id'])
+            ? $request->query()['id']
+            : null;
+
         return response()->json([
-            'data' => $this->service->get()
+            'data' => $this->service->get($productId)
         ]);
     }
 
     public function getById(string $id)
     {
         return response()->json([
-            'data' => $this->service->getById($id)
+            'data' => $this->service->get($id)
         ]);
     }
 
     public function store(Request $resquest)
     {
-        $this->service->store($resquest->toArray());
+        return $this->service->store($resquest->toArray());
     }
 
     public function update(Request $resquest, string $id)

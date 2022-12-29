@@ -16,7 +16,7 @@ class ProductsServiceProvider extends ServiceProvider
         // Podendo incluir middlewares, prefixos e namespaces para o controller
         Route::middleware(['api'])
             ->prefix('api/products')
-            ->namespace('App\Modules\Products\Http\Controllers')
+            ->namespace('App\Modules\Products')
             ->group(__DIR__ . '/../Routes/api.php');
     }
 }

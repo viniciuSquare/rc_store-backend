@@ -2,6 +2,7 @@
 namespace App\Modules\Base;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 
@@ -56,7 +57,7 @@ abstract class BaseService
         return new $resource($model);
     }
 
-    public function get()
+    public function get(int $id = null)
     {
         return $this->model->all();
 
@@ -65,11 +66,6 @@ abstract class BaseService
     public function getCollection()
     {
         return $this->resource->collection($this->model);
-    }
-
-    public function getById(string $id)
-    {
-        return $this->service->getById($id);
     }
 
     /**

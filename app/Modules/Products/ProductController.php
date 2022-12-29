@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Modules\Products\Http\Controllers;
+namespace App\Modules\Products;
 
 use App\Http\Controllers\Controller;
-use App\Modules\Products\Http\Resources\ProductResource;
+use App\Modules\Products\Resources\ProductResource;
 use App\Modules\Products\Services\ProductCategoryService;
 use App\Modules\Products\Services\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Class constructor.
-     */
     public function __construct(
         ProductService $service,
         ProductCategoryService $productCategoryService

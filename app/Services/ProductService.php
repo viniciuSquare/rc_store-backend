@@ -19,7 +19,7 @@ class ProductService extends BaseService
 
     public function getProducts()
     {
-        return Product::with('productCategories')->get();
+        return Product::with('category')->get();
     }
 
     // public function getById(Integer $productId): Product
