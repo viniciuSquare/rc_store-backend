@@ -27,6 +27,13 @@ class MovementController extends Controller
         ]);
     }
 
+    public function getMovementsByType(int $typeId)
+    {
+        return response()->json([
+            'data' => $this->service->getMovementsByType($typeId)
+        ]);
+    }
+
     public function storeType(Request $request)
     {
         return response()->json([

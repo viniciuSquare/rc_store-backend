@@ -1,4 +1,4 @@
-{
+s{
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
 	"name": "Untitled",
@@ -557,7 +557,7 @@
 											"top": 455,
 											"width": 121.1005859375,
 											"height": 13,
-											"text": "MovimentationType"
+											"text": "MovementType"
 										},
 										{
 											"_type": "LabelView",
@@ -760,7 +760,7 @@
 											"top": 463,
 											"width": 152.10888671875,
 											"height": 13,
-											"text": "Movimentations"
+											"text": "Movements"
 										},
 										{
 											"_type": "LabelView",
@@ -830,7 +830,7 @@
 											"top": 486,
 											"width": 152.10888671875,
 											"height": 13,
-											"text": "+type: MovimentationType",
+											"text": "+type: MovementType",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2986,7 +2986,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "MovimentationType",
+					"name": "MovementType",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
@@ -3014,7 +3014,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Movimentations",
+					"name": "Movements",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
