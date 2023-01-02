@@ -14,7 +14,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public BaseService $service;
+    // public BaseService $service;
 
     public function setService(BaseService $service)
     {

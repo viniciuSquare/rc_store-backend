@@ -20,10 +20,21 @@ class MovementController extends Controller
         $this->typeService = $typeService;
     }
 
-    public function getTypes()
+    public function getTypes(Request $request)
     {
+        $id = $request->query('id', null);
+
+        $operator = $request->query('operator', null);
+
+        if(isset($operator))
+        {
+            return response()->json([
+                'data' => $this->typeService->getByOperator($operator)
+            ]);
+        }
+
         return response()->json([
-            'data' => $this->typeService->get()
+            'data' => $this->typeService->get($id)
         ]);
     }
 

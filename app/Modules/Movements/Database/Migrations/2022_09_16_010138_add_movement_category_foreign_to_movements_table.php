@@ -14,8 +14,8 @@ class AddMovementCategoryForeignToMovementsTable extends Migration
     public function up()
     {
         Schema::table('movements', function (Blueprint $table) {
-            $table->unsignedBigInteger('movement_category_id');
-            $table->foreign('movement_category_id')->references('id')->on('movement_types');
+            $table->unsignedBigInteger('movement_type_id');
+            $table->foreign('movement_type_id')->references('id')->on('movement_types');
         });
     }
 
@@ -27,7 +27,7 @@ class AddMovementCategoryForeignToMovementsTable extends Migration
     public function down()
     {
         Schema::table('movements', function (Blueprint $table) {
-            $table->dropForeign(['movement_category_id']);
+            $table->dropForeign(['movement_type_id']);
         });
     }
 }

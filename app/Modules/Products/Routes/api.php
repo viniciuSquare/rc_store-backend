@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/categories', 'ProductController@getCategories');
 Route::post('/categories', 'ProductController@storeCategory');
 
+Route::post('/movement', 'ProductController@storeProductMovement');
+
 Route::get('', 'ProductController@get');
 Route::get('/{productId}', 'ProductController@get');
 Route::post('', 'ProductController@store');
