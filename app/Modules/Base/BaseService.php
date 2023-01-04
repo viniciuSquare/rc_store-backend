@@ -89,7 +89,7 @@ abstract class BaseService
         return $model;
     }
 
-    public function update(array $data, string $id)
+    public function update(array $data, int $id)
     {
         try {
             DB::beginTransaction();
@@ -107,11 +107,11 @@ abstract class BaseService
     /**
      * Remove registros do modelo do banco de dados
      *
-     * @param string $id
+     * @param int $id
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
         try {
             DB::beginTransaction();
@@ -132,11 +132,11 @@ abstract class BaseService
     /**
      * Restaura registros do modelo do banco de dados
      *
-     * @param string $id
+     * @param int $id
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function restore(string $id)
+    public function restore(int $id)
     {
         try {
             DB::beginTransaction();

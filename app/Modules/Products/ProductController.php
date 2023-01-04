@@ -4,7 +4,6 @@ namespace App\Modules\Products;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Movements\Movement;
-use App\Modules\Products\Resources\ProductResource;
 use App\Modules\Products\Services\ProductCategoryService;
 use App\Modules\Products\Services\ProductService;
 use Illuminate\Http\Request;
@@ -17,6 +16,20 @@ class ProductController extends Controller
   ) {
     $this->service = $service;
     $this->productCategoryService = $productCategoryService;
+  }
+
+  function getStock( )
+  {
+    return response()->json([
+      'data' => $this->service->getStock()
+    ]);
+  }
+
+  function storeProductMovement(Request $request)
+  {
+    return response()->json([
+      "data" => $this->service->storeProductMovement(new Movement($request->toArray()))
+    ]);
   }
 
   public function getCategories()
@@ -33,10 +46,9 @@ class ProductController extends Controller
     ]);
   }
 
-  function storeProductMovement(Request $request)
-  {
+  public function deleteCategory(int $id) {
     return response()->json([
-      "data" => $this->service->storeProductMovement(new Movement($request->toArray()))
+      $this->productCategoryService->destroy($id)
     ]);
   }
 }

@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/categories', 'ProductController@getCategories');
 Route::post('/categories', 'ProductController@storeCategory');
+Route::delete('/categories/{categoryId}', 'ProductController@deleteCategory');
 
 Route::post('/movement', 'ProductController@storeProductMovement');
+Route::get('/stock', 'ProductController@getStock');
 
 Route::get('', 'ProductController@get');
 Route::get('/{productId}', 'ProductController@get');

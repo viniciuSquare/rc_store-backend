@@ -30,6 +30,11 @@ class ProductService extends BaseService
       ProductResource::collection($this->model->all());
   }
 
+  public function getStock()
+  {
+    return ProductResource::collection($this->model->where("stock", "!=", 0)->get());
+  }
+
   /**
    * Store product and create movement if current stock is defined
    * */
